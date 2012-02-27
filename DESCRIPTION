@@ -1,0 +1,9 @@
+Package: ecostudy
+Version: 0.1
+Date: 2000/09/27
+Title: Ecology studying programs
+Author: Jari Oksanen <jari.oksanen@helsinki.fi>
+Description: Functions to aid understanding ecological models,
+especially with Begon et al.
+License: LGPL
+URL: http://www.helsinki.fi/~jhoksane/
