@@ -36,4 +36,4 @@ par(mfrow=c(2,2))
 replicate(4, logrow(5, 1.2, 0.8, 50))
 par(mfrow=c(1,1))
 }
-\keyword{ ~keyword }%-- one or more ...
+\keyword{ models }
