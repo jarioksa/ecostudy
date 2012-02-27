@@ -1,6 +1,8 @@
 \name{lotkacomp}
 \alias{lotkacomp}
 \alias{plot.lotkacomp}
+\alias{lines.lotkacomp}
+\alias{lotkaplot}
 
 \title{
   Lotka-Volterra Competition Model
@@ -12,6 +14,7 @@
 lotkacomp(alpha, beta, K1, K2)
 \method{plot}{lotkacomp}(x, arrows = 9, ...)
 \method{lines}{lotkacomp}(x, N1 = 1, N2 = 1, r1 = 0.2, r2 = 0.2, ...)
+lotkaplot(x, N1 = 1, N2 = 1, r1 = 0.2, r2 = 0.2, ...)
 }
 
 \arguments{
@@ -35,7 +38,9 @@ lotkacomp(alpha, beta, K1, K2)
 }
 \details{
   Function \code{lotkacomp} sets a Lotka-Volterra competition
-  model. Function \code{plot} draws a phase graph.
+  model. Function \code{plot} draws a phase graph. Function
+  \code{lines} adds species trajectory to the phase graph, and
+  \code{lotkaplot} shows population sizes against time.
 }
 \value{
   Function \code{lotkacomp} returns a Lotka-Volterra competition object.

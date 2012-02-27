@@ -41,6 +41,8 @@
     }
 }
 
+## add trajectory line to a plot
+
 `lines.lotkacomp` <-
     function(x, N1 = 1, N2 = 1, r1 = 0.2, r2 = 0.2, ...)
 {
@@ -53,3 +55,18 @@
     lines(out, ...)
     invisible(out)
 }
+
+## plot populations sizes against time
+
+`lotkaplot` <-
+    function(x, N1 = 1, N2 = 1, r1 = 0.2, r2 = 0.2, ...)
+{
+    parms <- c(r1 = r1, r2 = r2, a11 = 1/x$K1, a22 = 1/x$K2,
+               a12 = x$alpha/x$K1, a21 = x$beta/x$K2)
+    initialN <- c(N1, N2)
+    out <- ode(y = initialN, times = 1:100, func = lvcomp2,
+               parms = parms)
+    matplot(out[,1], out[,-1], xlab = "Time (t)", ylab = "Population sizes",
+            col =c(2,4), type="l", lty=1, ...)
+}
+
