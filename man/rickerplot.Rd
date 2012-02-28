@@ -26,7 +26,7 @@ rickerplot(N, R, K, b)
 \details{
 
   The population size \eqn{N} at time \eqn{t+1} is given as
-  \deqn{N_{t+1} = R N_t / (1 + (aN)^b \,}{N[t+1] = r*N[t]/(1+(a*N)^b),}
+  \deqn{N_{t+1} = R N_t / (1 + (aN)^b) \,}{N[t+1] = r*N[t]/(1+(a*N)^b),}
   where
   \deqn{a = ((R-1)^{1/b})/K.}
 }

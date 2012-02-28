@@ -28,7 +28,7 @@ lotkacomp(alpha, beta, K1, K2)
     A \code{lotkacomp} result object.
 }
   \item{arrows}{
-    Number of trajectory arrays drawn.
+    Number of arrays drawn to show the area where species increases. 
   }
   \item{N1, N2}{Initial population sizes.}
   \item{r1, r2}{Population growth rates.}
@@ -40,7 +40,9 @@ lotkacomp(alpha, beta, K1, K2)
   Function \code{lotkacomp} sets a Lotka-Volterra competition
   model. Function \code{plot} draws a phase graph. Function
   \code{lines} adds species trajectory to the phase graph, and
-  \code{lotkaplot} shows population sizes against time.
+  \code{traj} extracts the population trajectories. Use
+  \code{\link{plot.traj}} to display the population sizes against
+  time.
 }
 \value{
   Function \code{lotkacomp} returns a Lotka-Volterra competition object.
