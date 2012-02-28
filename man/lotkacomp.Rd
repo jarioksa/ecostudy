@@ -1,8 +1,8 @@
 \name{lotkacomp}
 \alias{lotkacomp}
 \alias{plot.lotkacomp}
+\alias{traj.lotkacomp}
 \alias{lines.lotkacomp}
-\alias{lotkaplot}
 
 \title{
   Lotka-Volterra Competition Model
@@ -14,7 +14,7 @@
 lotkacomp(alpha, beta, K1, K2)
 \method{plot}{lotkacomp}(x, arrows = 9, ...)
 \method{lines}{lotkacomp}(x, N1 = 1, N2 = 1, r1 = 0.2, r2 = 0.2, ...)
-lotkaplot(x, N1 = 1, N2 = 1, r1 = 0.2, r2 = 0.2, ...)
+\method{traj}{lotkacomp}(x, N1 = 1, N2 = 1, r1 = 0.2, r2 = 0.2, ...)
 }
 
 \arguments{
@@ -53,6 +53,11 @@ lotkaplot(x, N1 = 1, N2 = 1, r1 = 0.2, r2 = 0.2, ...)
 \examples{
 mod <- lotkacomp(0.8, 0.6, 20, 20)
 plot(mod)
+## Add trajectory line and starting point
+lines(mod, 1, 1, col="green", lwd=2)
+points(1, 1, pch=16, col="green")
+## Plot populations against time
+plot(traj(mod, 1, 1))
 }
 \keyword{ models }
 

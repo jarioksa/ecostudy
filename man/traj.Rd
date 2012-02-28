@@ -1,7 +1,7 @@
 \name{traj}
 \alias{traj}
 \alias{plot.traj}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
   Extract Population Trajectories
 }
@@ -15,9 +15,9 @@
 \usage{
 traj(x, ...)
 \method{plot}{traj}(x, xlab = "Time (t)", ylab = "Population size", lwd = 2, 
-    lty = 1, col =c(4,2), ...)
+    lty = 1, col =c(2,4), ...)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{x}{
   A population model or a \code{"traj"} object for \code{plot}.
@@ -45,7 +45,8 @@ traj(x, ...)
 }
 
 \examples{
-## to come
+mod <- lotkacomp(1.4, 0.9, 30, 30)
+plot(traj(mod, 10, 2))
 }
 \keyword{ graphics }
 \keyword{ models }
