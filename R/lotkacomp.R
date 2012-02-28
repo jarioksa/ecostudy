@@ -35,9 +35,11 @@
          labels = c(expression(K[1]/alpha), expression(K[2])))
     if (arrows) {
         px <- ppoints(arrows) * x$sp2$x
-        arrows(px, 0, px, x$sp2$y - x$beta * px, col="blue")
+        arrows(px, 0, px, x$sp2$y - x$beta * px, col="lightblue",
+               length=0.1)
         py <- ppoints(arrows) * x$sp1$y
-        arrows(0, py, x$alpha * (x$K1/x$alpha - py), py, col = "red")
+        arrows(0, py, x$alpha * (x$K1/x$alpha - py), py, col = "pink",
+               length=0.1)
     }
 }
 
