@@ -1,11 +1,11 @@
 Package: ecostudy
-Version: 0.3
-Date: 2012-02-27
+Version: 0.4
+Date: 2012-02-28
 Title: Ecology studying programs
 Author: Jari Oksanen <jari.oksanen@oulu.fi>
 Maintainer: Jari Oksanen <jari.oksanen@oulu.fi>
-Description: Functions to aid understanding ecological models,
-  especially with Begon et al.
+Description: Functions to aid understanding ecological models for
+  Ecology 101 level.
 Depends: primer
 License: LGPL
 URL: http://cc.oulu.fi/~jarioksa/
