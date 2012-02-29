@@ -55,7 +55,7 @@
     initialN <- c(N1, N2)
     out <- ode(y = initialN, times = seq(from = 0, to = time, by = step),
                func = lvcomp2, parms = parms)
-    class(out) <- "traj"
+    class(out) <- c("traj", class(out))
     out
 }
 
