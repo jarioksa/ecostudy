@@ -14,7 +14,8 @@
 lotkacomp(alpha, beta, K1, K2)
 \method{plot}{lotkacomp}(x, arrows = 9, ...)
 \method{lines}{lotkacomp}(x, N1 = 1, N2 = 1, r1 = 0.2, r2 = 0.2, ...)
-\method{traj}{lotkacomp}(x, N1 = 1, N2 = 1, r1 = 0.2, r2 = 0.2, ...)
+\method{traj}{lotkacomp}(x, N1 = 1, N2 = 1, r1 = 0.2, r2 = 0.2,
+    time = 100, steps = 1, ...)
 }
 
 \arguments{
@@ -32,6 +33,8 @@ lotkacomp(alpha, beta, K1, K2)
   }
   \item{N1, N2}{Initial population sizes.}
   \item{r1, r2}{Population growth rates.}
+  \item{time, step}{Total time and length of single time step in the
+    trajectories.}
   \item{\dots}{
     Other parameters passed to functions.
   }
