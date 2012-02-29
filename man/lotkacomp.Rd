@@ -15,7 +15,7 @@ lotkacomp(alpha, beta, K1, K2)
 \method{plot}{lotkacomp}(x, arrows = 9, ...)
 \method{lines}{lotkacomp}(x, N1 = 1, N2 = 1, r1 = 0.2, r2 = 0.2, ...)
 \method{traj}{lotkacomp}(x, N1 = 1, N2 = 1, r1 = 0.2, r2 = 0.2,
-    time = 100, steps = 1, ...)
+    time = 100, step = 1, ...)
 }
 
 \arguments{
