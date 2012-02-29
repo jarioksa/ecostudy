@@ -1,6 +1,7 @@
 \name{traj}
 \alias{traj}
 \alias{plot.traj}
+\alias{lines.traj}
 
 \title{
   Extract Population Trajectories
@@ -15,7 +16,8 @@
 \usage{
 traj(x, ...)
 \method{plot}{traj}(x, xlab = "Time (t)", ylab = "Population size", lwd = 2, 
-    lty = 1, col =c(2,4), ...)
+    lty = 1, col =c(2,4), type = "l", ...)
+\method{lines}{traj}(x, ...)
 }
 
 \arguments{
@@ -23,7 +25,8 @@ traj(x, ...)
   A population model or a \code{"traj"} object for \code{plot}.
 }
   \item{xlab, ylab}{Axis labels.}
-  \item{lwd, lty, col}{Line width, type and colours.}	
+  \item{lwd, lty, col}{Line width, type and colours.}
+  \item{type}{The type of plot (defaults to \code{"l"}ines)}
   \item{\dots}{
   Other arguments passed to functions; \code{plot} passes these to 
   \code{\link{matplot}}.
