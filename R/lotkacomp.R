@@ -21,8 +21,8 @@
 `plot.lotkacomp` <-
     function(x, arrows = 9, ...)
 {
-    xlim = c(0, 1.1*max(x$sp1$x, x$sp2$x))
-    ylim = c(0, 1.1*max(x$sp1$y, x$sp2$y))
+    xlim = c(0, 1.1*max(x$sp1$x, x$sp2$x, na.rm = TRUE))
+    ylim = c(0, 1.1*max(x$sp1$y, x$sp2$y, na.rm = TRUE))
     plot(c(0,0), xlim = xlim, ylim = ylim, axes = FALSE, type = "n",
          xlab = "Population size of species 1",
          ylab = "Population size of species 2", xaxs = "i", yaxs = "i", ...)
