@@ -70,3 +70,43 @@
     lines(out, ...)
 }
 
+## summary
+
+`summary.lotkacomp` <-
+    function(object, ...)
+{
+    EQ <- 1e-4
+    ## Four possible cases
+    wincase <- (object$sp1$x >= object$sp2$x) + 2 * (object$sp2$y >= object$sp1$y)
+    ## plus one undefined case
+    if (abs(object$sp1$x - object$sp2$x) < EQ &&
+        abs(object$sp1$y - object$sp2$y) < EQ)
+        wincase <- 4
+    switch(wincase + 1,
+       {div <- 1 - object$alpha * object$beta
+        xsol <- (object$K1 - object$alpha * object$K2)/div
+        ysol <- (object$K2 - object$beta * object$K1)/div},
+       {xsol <- object$K1
+        ysol <- 0},
+       {xsol <- 0
+        ysol <- object$K2},
+       {xsol <- object$K1
+        ysol <- object$K2},
+       {xsol <- NA
+        ysol <- NA})
+    out <- list(case = wincase, spec1 = xsol, spec2 = ysol)
+    class(out) <- "summary.lotkacomp"
+    out
+}
+
+`print.summary.lotkacomp` <-
+    function(x, ...)
+{
+    cases <- c("stable equilibrium", "species 1 wins", "species 2 wins",
+               "either species can win", "undefined")
+    cat("Lotka-Volterra competition model:\n")
+    cat("Summary:", cases[x$case], "\n")
+    cat("Stable solution:\n")
+    cat(c("species 1" = x$spec1, "species 2" =  x$spec2), "\n")
+    invisible(x)
+}
