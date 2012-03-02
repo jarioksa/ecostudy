@@ -41,6 +41,11 @@
         arrows(0, py, x$alpha * (x$K1/x$alpha - py), py, col = "red",
                length=0.1, lwd=0.5)
     }
+    ## Add markers to the end solution
+    summ <- summary(x)
+    pcol <- c("black", "red", "blue", list(c("red","blue")), NA)[summ$case+1]
+    pcol <- unlist(pcol)
+    points(summ$outcome, pch=16, col = pcol, cex=1.5, xpd = TRUE)
 }
 
 
