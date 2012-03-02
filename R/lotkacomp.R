@@ -16,6 +16,24 @@
     out
 }
 
+## print basic info
+
+`print.lotkacomp` <-
+    function(x, ...)
+{
+    out <- matrix(c(x$alpha, x$K1, x$sp1$y,
+                    x$beta, x$K2, x$sp2$x),
+                  nrow = 2, ncol = 3, byrow = TRUE,
+                  dimnames = list(paste("species", 1:2),
+                  c("comp", "K", "K/comp")))
+    cat("\n")
+    cat("Lotka-Volterra two-species competition\n")
+    print(out, ...)
+    cat("(comp is competion coefficient alpha or beta)\n")
+    cat("\n")
+    invisible(x)
+}
+
 ## draw a Lotka-Volterra phase diagrama
 
 `plot.lotkacomp` <-

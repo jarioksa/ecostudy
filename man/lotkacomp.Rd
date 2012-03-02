@@ -5,6 +5,7 @@
 \alias{lines.lotkacomp}
 \alias{summary.lotkacomp}
 \alias{print.summary.lotkacomp}
+\alias{print.lotkacomp}
 
 \title{
   Lotka-Volterra Competition Model
@@ -67,7 +68,8 @@ lines(mod, 1, 1, col="green", lwd=2)
 points(1, 1, pch=16, col="green")
 ## Plot populations against time
 plot(traj(mod, 1, 1))
-## summary
+## Textual output
+mod
 summary(mod)
 }
 \keyword{ models }
