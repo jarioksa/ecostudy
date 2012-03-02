@@ -50,7 +50,8 @@ lotkacomp(alpha, beta, K1, K2)
   \code{lines} adds species trajectory to the phase graph, and
   \code{traj} extracts the population trajectories. Use
   \code{\link{plot.traj}} to display the population sizes against
-  time.
+  time. The \code{summary} gives the winner of the competition and the
+  outcome population sizes.
 }
 \value{
   Function \code{lotkacomp} returns a Lotka-Volterra competition object.
