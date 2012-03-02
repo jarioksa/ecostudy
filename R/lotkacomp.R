@@ -73,7 +73,7 @@
 ## summary
 
 `summary.lotkacomp` <-
-    function(object, ...)
+    function(object, digits = max(3, getOption("digits") - 3), ...)
 {
     EQ <- 1e-4
     ## Four possible cases
@@ -82,19 +82,22 @@
     if (abs(object$sp1$x - object$sp2$x) < EQ &&
         abs(object$sp1$y - object$sp2$y) < EQ)
         wincase <- 4
-    switch(wincase + 1,
-       {div <- 1 - object$alpha * object$beta
-        xsol <- (object$K1 - object$alpha * object$K2)/div
-        ysol <- (object$K2 - object$beta * object$K1)/div},
-       {xsol <- object$K1
-        ysol <- 0},
-       {xsol <- 0
-        ysol <- object$K2},
-       {xsol <- object$K1
-        ysol <- object$K2},
-       {xsol <- NA
-        ysol <- NA})
-    out <- list(case = wincase, spec1 = xsol, spec2 = ysol)
+    outcome <- switch(wincase + 1,
+                  {div <- 1 - object$alpha * object$beta
+                   matrix(c((object$K1 - object$alpha * object$K2)/div,
+                            (object$K2 - object$beta * object$K1)/div),
+                          nrow = 1,
+                          dimnames = list("outcome", c(paste("species", 1:2))))},
+                  {matrix(c(object$K1,0), nrow = 1,
+                          dimnames = list("outcome", c(paste("species", 1:2))))},
+                  {matrix(c(0, object$K2), nrow=1,
+                          dimnames = list("outcome", c(paste("species", 1:2))))},
+                  {matrix(c(object$K1, 0, 0, object$K2), nrow = 2, byrow=TRUE,
+                          dimnames = list(paste("outcome", 1:2),
+                          paste("species", 1:2))) },
+                  {matrix(c(NA, NA), nrow=1,
+                      dimnames = list("outcome", c(paste("species", 1:2))))})
+    out <- list(case = wincase, outcome = outcome, digits = digits)
     class(out) <- "summary.lotkacomp"
     out
 }
@@ -104,9 +107,11 @@
 {
     cases <- c("stable equilibrium", "species 1 wins", "species 2 wins",
                "either species can win", "undefined")
-    cat("Lotka-Volterra competition model:\n")
-    cat("Summary:", cases[x$case], "\n")
+    cat("\n")
+    cat("Lotka-Volterra competition model\n")
+    cat("Summary:", cases[x$case+1], "\n")
     cat("Stable solution:\n")
-    cat(c("species 1" = x$spec1, "species 2" =  x$spec2), "\n")
+    print(x$outcome, digits = x$digits)
+    cat("\n")
     invisible(x)
 }
