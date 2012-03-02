@@ -18,8 +18,8 @@
         ylim <- c(0, 3 * x$N0)
     if (missing(xlim))
         xlim <- c(0, 3 * x$P0)
-    plot(x$N0, x$P0, xlim = xlim, ylim = ylim, xaxs = "i", yaxs = "i",
-         xlab = "Prey Density", ylab = "Predator Density", ...)
+    plot(x$P0, x$N0, xlim = xlim, ylim = ylim, xaxs = "i", yaxs = "i",
+         xlab = "Prey Density", ylab = "Predator Density", type = "n", ...)
     abline(h = x$N0, col = "blue", lwd = 2)
     abline(v = x$P0, col = "red", lwd = 2)
     ## arrows
