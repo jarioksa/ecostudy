@@ -58,6 +58,8 @@ rmprey(b, K, w, D, e, s)
   \code{rmprey} or zero if the roots are negative.}
 
   \item{prediso}{The predator isocline.}
+
+  \item{b, K, w, s, e, D}{Model parameters.}
 }
 
 \author{ Jari Oksanen } 
@@ -69,6 +71,8 @@ rmprey(b, K, w, D, e, s)
 \examples{
 mod <- rmprey(0.8, 1000, 5, 400, 0.07, 0.2)
 plot(mod)
+lines(mod, 1000, 100)
+plot(traj(mod, 1000, 100))
 }
 
 \keyword{ models }

@@ -30,7 +30,8 @@
     prediso <- s*D/(e*w - s)
     ## out
     out <- list(preyfun = preyfun, invpreyfun = invpreyfun, preyopt = opt,
-                preytop = top, preylimits = lims, prediso = prediso)
+                preytop = top, preylimits = lims, prediso = prediso, b = b,
+                K = K, D = D, w = w, e = e, s = s)
     class(out) <- "rmprey"
     out
 }
@@ -62,3 +63,25 @@
     }
 }
 
+## population trajectories
+
+traj.rmprey <-
+    function(x, N, P, time = 100, step = 1, ...)
+{
+    parms <- c(b = x$b, e = x$e, s = x$s, w = x$w, D = x$D,
+               alpha = 1/x$K)
+    initialN <- c(N, P)
+    time <- seq(from = 0, to = time, by = step)
+    out <- ode(y = initialN, time = time, func = predpreyRM,
+               parms = parms)
+    class(out) <- c("traj", class(out))
+    out
+}
+
+## lines
+
+lines.rmprey <- function(x, N, P, ...)
+{
+    out <- traj(x, N, P, ...)
+    lines(out[,-1], ...)
+}
