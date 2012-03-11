@@ -1,6 +1,8 @@
 \name{rmprey}
 \alias{rmprey}
 \alias{plot.rmprey}
+\alias{traj.rmprey}
+\alias{lines.rmprey}
 
 \title{
   Rosenzweig-MacArthur Model of Predator-Prey Dynamics
@@ -14,6 +16,8 @@
 \usage{
 rmprey(b, K, w, D, e, s)
 \method{plot}{rmprey}(x, xlim, ylim, arrows = 5, ...)
+\method{lines}{rmprey}(x, N, P, ...)
+\method{traj}{rmprey}(x, N, P, time = 100, step = 1, ...)
 }
 
 \arguments{
@@ -21,6 +25,9 @@ rmprey(b, K, w, D, e, s)
   \item{x}{An \code{rmprey} result object.}
   \item{xlim, ylim}{Axis limits.}
   \item{arrows}{Number of trend arrows displayed in the graphs.}
+  \item{N, P}{Initial prey and predator densities.}
+  \item{time, step}{Total time span and time step for which
+          trajectories are found.}
   \item{\dots}{Other parameters passed to graphical functions.}
 }
 
