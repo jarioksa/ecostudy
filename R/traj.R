@@ -10,7 +10,7 @@
 
 `plot.traj` <-
     function(x, xlab = "Time (t)", ylab = "Population size", lwd =2, lty = 1,
-             col =c(2,4), type = "l", ...)
+             col =c(4,2), type = "l", ...)
 {
     matplot(x[,1], x[,-1], xlab = xlab, ylab = ylab, lwd = lwd, lty = lty,
             col = col, type = type, ...) 

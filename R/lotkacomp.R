@@ -45,23 +45,23 @@
          xlab = "Population size of species 1",
          ylab = "Population size of species 2", xaxs = "i", yaxs = "i", ...)
     box()
-    segments(0, x$sp1$y, x$sp1$x, 0, col = 2, lwd = 3, ...)
-    segments(0, x$sp2$y, x$sp2$x, 0, col = 4, lwd = 3, ...)
+    segments(0, x$sp1$y, x$sp1$x, 0, col = 4, lwd = 3, ...)
+    segments(0, x$sp2$y, x$sp2$x, 0, col = 2, lwd = 3, ...)
     axis(1, at = c(x$sp1$x, x$sp2$x),
          labels =c(expression(K[1]), expression(K[2]/beta)))
     axis(2, at = c(x$sp1$y, x$sp2$y),
          labels = c(expression(K[1]/alpha), expression(K[2])))
     if (arrows) {
         px <- ppoints(arrows) * x$sp2$x
-        arrows(px, 0, px, x$sp2$y - x$beta * px, col="blue",
+        arrows(px, 0, px, x$sp2$y - x$beta * px, col=2,
                length=0.1, lwd=0.5)
         py <- ppoints(arrows) * x$sp1$y
-        arrows(0, py, x$alpha * (x$K1/x$alpha - py), py, col = "red",
+        arrows(0, py, x$alpha * (x$K1/x$alpha - py), py, col = 4,
                length=0.1, lwd=0.5)
     }
     ## Add markers to the end solution
     summ <- summary(x)
-    pcol <- c("black", "red", "blue", list(c("red","blue")), NA)[summ$case+1]
+    pcol <- c(1, 4, 2, list(c(4,2)), NA)[summ$case+1]
     pcol <- unlist(pcol)
     points(summ$outcome, pch=16, col = pcol, cex=1.5, xpd = TRUE)
 }

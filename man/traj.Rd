@@ -16,7 +16,7 @@
 \usage{
 traj(x, ...)
 \method{plot}{traj}(x, xlab = "Time (t)", ylab = "Population size", lwd = 2, 
-    lty = 1, col =c(2,4), type = "l", ...)
+    lty = 1, col =c(4,2), type = "l", ...)
 \method{lines}{traj}(x, ...)
 }
 
