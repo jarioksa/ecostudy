@@ -16,7 +16,7 @@
 \usage{
 rmprey(b, K, w, D, e, s)
 \method{plot}{rmprey}(x, xlim, ylim, arrows = 5, ...)
-\method{lines}{rmprey}(x, N, P, ...)
+\method{lines}{rmprey}(x, N, P, time = 100, step = 0.2, ...)
 \method{traj}{rmprey}(x, N, P, time = 100, step = 1, ...)
 }
 

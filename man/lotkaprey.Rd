@@ -13,7 +13,7 @@
 \usage{
 lotkaprey(a, b, c, d)
 \method{plot}{lotkaprey}(x, xlim, ylim, arrows = 8, ...)
-\method{lines}{lotkaprey}(x, N, P, ...)
+\method{lines}{lotkaprey}(x, N, P, time = 100, step = 0.2, ...)
 \method{traj}{lotkaprey}(x, N, P, time = 100, step = 1, ...)
 }
 

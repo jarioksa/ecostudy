@@ -80,8 +80,8 @@ traj.rmprey <-
 
 ## lines
 
-lines.rmprey <- function(x, N, P, ...)
+lines.rmprey <- function(x, N, P, time = 100, step = 0.2, ...)
 {
-    out <- traj(x, N, P, ...)
+    out <- traj(x, N, P, time = time, step = step, ...)
     lines(out[,-1], ...)
 }
