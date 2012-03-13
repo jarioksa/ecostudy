@@ -78,3 +78,13 @@
     lines(xy, ...)
 }
 
+## print
+
+`print.ranlogist` <-
+    function(x, ...)
+{
+    cat("\nRandom Logistic Population Growth\n")
+    cat("\nCall:", deparse(x$call), "\n\n")
+    cat("End time", x$timend, "after", length(x$time), "events\n\n")
+    invisible(x)
+}

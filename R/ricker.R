@@ -65,3 +65,13 @@
     }
 }
 
+## print
+
+`print.ricker` <-
+    function(x, ...)
+{
+    cat("\nRicker Discrete Population Growth\n")
+    cat("\nCall:", deparse(x$call), "\n\n")
+    cat("Number of time steps:", length(x$N), "\n\n")
+    invisible(x)
+}

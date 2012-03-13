@@ -3,9 +3,10 @@
 \alias{plot.rmprey}
 \alias{traj.rmprey}
 \alias{lines.rmprey}
+\alias{print.rmprey}
 
 \title{
-  Rosenzweig-MacArthur Model of Predator-Prey Dynamics
+  Rosenzweig-MacArthur Predator-Prey Model
 }
 
 \description{ The function sets up a Rosenzweig-MacArthur model of
@@ -79,6 +80,7 @@ rmprey(b, K, w, D, e, s)
 
 \examples{
 mod <- rmprey(0.8, 1000, 5, 400, 0.07, 0.2)
+mod
 plot(mod)
 lines(mod, 1000, 100)
 plot(traj(mod, 1000, 100))

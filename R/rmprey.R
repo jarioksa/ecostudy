@@ -85,3 +85,18 @@ lines.rmprey <- function(x, N, P, time = 100, step = 0.2, ...)
     out <- traj(x, N, P, time = time, step = step, ...)
     lines(out[,-1], ...)
 }
+
+## print
+
+`print.rmprey` <-
+    function(x, ...)
+{
+    cat("\nRosenzweig-MacArthur Predator-Prey Model\n")
+    cat("\nCall:", deparse(x$call), "\n\n")
+    cat("Prey peak at N =", x$preyopt, " P =", x$preytop, "\n")
+    cat("and carrying capacity K =", x$K, "\n")
+    cat("\n")
+    cat("Predator isocline N =", x$prediso, "\n")
+    cat("with equilibrium point at P =", x$preyfun(x$prediso), "\n\n")
+    invisible(x)
+}

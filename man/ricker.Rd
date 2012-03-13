@@ -52,6 +52,8 @@ ricker(N, R, K, b)
 par(mfrow=c(2,2))
 mod1 <- ricker(10, 2, 50, 1)
 mod4 <- ricker(10, 2, 50, 4)
+mod1
+mod4
 plot(mod1)
 plot(mod4)
 par(mfrow=c(1,1))

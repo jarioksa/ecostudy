@@ -29,6 +29,7 @@
                   c("comp", "K", "K/comp")))
     cat("\n")
     cat("Lotka-Volterra two-species competition\n")
+    cat("\nCall:", deparse(x$call), "\n\n")
     print(out, ...)
     cat("(comp is competion coefficient alpha or beta)\n")
     cat("\n")

@@ -3,6 +3,7 @@
 \alias{plot.lotkaprey}
 \alias{traj.lotkaprey}
 \alias{lines.lotkaprey}
+\alias{print.lotkaprey}
 
 \title{
   Lotka-Volterra Predator-Prey Model
@@ -65,6 +66,7 @@ lotkaprey(a, b, c, d)
 }
 \examples{
 mod <- lotkaprey(0.5, 0.01, 0.2, 0.1)
+mod
 op <- par(no.readonly = TRUE)
 layout(matrix(c(1,1,2, 1,1,3), nrow=2, byrow = TRUE))
 plot(mod)

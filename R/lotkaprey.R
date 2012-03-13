@@ -75,3 +75,14 @@
     out <- traj(x, N, P, time = time, step = step, ...)
     lines(out[,-1], ...)
 }
+
+`print.lotkaprey` <-
+    function(x, ...)
+{
+    cat("\n")
+    cat("Lotka-Volterra Predator-Prey Model\n")
+    cat("\nCall:", deparse(x$call), "\n\n")
+    cat("Predator isocline: N =", x$P0, "\n")
+    cat("Prey isocline:     P =", x$N0, "\n\n")
+    invisible(x)
+}
