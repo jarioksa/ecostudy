@@ -6,7 +6,7 @@
     function(a, b, c, d)
 {
     out <- list("a" = a, "b" = b, "c" = c, "d" = d, 
-                "P0" = c/d/b, "N0" = a/b)
+                "P0" = c/d/b, "N0" = a/b, call = match.call())
     class(out) <- "lotkaprey"
     out
 }

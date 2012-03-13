@@ -37,7 +37,7 @@
     }
     out <- list(N0 = N0, b = b, d = d, r = r, K = K,
                 bcontr = bcontr, timend = tend, time = time,
-                N = simN)
+                N = simN, call = match.call())
     class(out) <- "ranlogist"
     out
 }

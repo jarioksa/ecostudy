@@ -31,7 +31,7 @@
     ## out
     out <- list(preyfun = preyfun, invpreyfun = invpreyfun, preyopt = opt,
                 preytop = top, preylimits = lims, prediso = prediso, b = b,
-                K = K, D = D, w = w, e = e, s = s)
+                K = K, D = D, w = w, e = e, s = s, call = match.call())
     class(out) <- "rmprey"
     out
 }

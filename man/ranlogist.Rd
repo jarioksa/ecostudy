@@ -35,7 +35,8 @@ ranlogist(N0, b, d, K, bcontr=0.5)
 \value{
   Function \code{ranlogist} returns the model parameters, \eqn{r},
   targeted end time of simulation (\code{timend}) and the simulation
-  results in vectors \code{time} and \code{N}.
+  results in vectors \code{time} and \code{N}, and the function
+  \code{call}. 
 }
 
 \author{Jari Oksanen }

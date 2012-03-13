@@ -11,7 +11,8 @@
         stop("K2 needs a value")
     out <- list(`alpha` = alpha, `beta` = beta, `K1` = K1, `K2` = K2,
                 `sp1` = list("x" = K1, "y" = K1/alpha),
-                `sp2` = list("x" = K2/beta, "y" = K2))
+                `sp2` = list("x" = K2/beta, "y" = K2),
+                call = match.call())
     class(out) <- "lotkacomp"
     out
 }

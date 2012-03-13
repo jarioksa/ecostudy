@@ -14,7 +14,8 @@
         if (N > 0.99*K) over <- over+1
         if (over > 10) break
     }
-    out <- list(R = R, K = K, b = b, a = a, N = tmp)
+    out <- list(R = R, K = K, b = b, a = a, N = tmp,
+                call = match.call())
     class(out) <- "ricker"
     out
 }

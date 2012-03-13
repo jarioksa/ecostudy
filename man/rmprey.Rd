@@ -67,6 +67,8 @@ rmprey(b, K, w, D, e, s)
   \item{prediso}{The predator isocline.}
 
   \item{b, K, w, s, e, D}{Model parameters.}
+
+  \item{call}{The function call.}
 }
 
 \author{ Jari Oksanen } 

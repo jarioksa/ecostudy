@@ -44,7 +44,8 @@ ricker(N, R, K, b)
 
 \value{
   Function returns the input model parameters, the calculated new
-  parameter \eqn{a} and population sizes \eqn{N} at each step.
+  parameter \eqn{a} and population sizes \eqn{N} at each step, and the
+  function \code{call}.
 }
 
 \examples{
