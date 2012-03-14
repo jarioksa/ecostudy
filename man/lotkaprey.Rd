@@ -62,7 +62,8 @@ lotkaprey(a, b, c, d)
 
 
 \seealso{
-  \code{\link{lotkacomp}}.
+  \code{\link{lotkacomp}}, \code{\link{lotkapreyK}},
+  \code{\link{rmprey}}. 
 }
 \examples{
 mod <- lotkaprey(0.5, 0.01, 0.2, 0.1)
@@ -74,6 +75,7 @@ lines(mod, 200, 20)
 lines(mod, 200, 30)
 plot(traj(mod, 200, 20))
 plot(traj(mod, 200, 30))
+par(op)
 }
 \keyword{ models }
 

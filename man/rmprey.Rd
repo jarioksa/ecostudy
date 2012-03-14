@@ -75,15 +75,18 @@ rmprey(b, K, w, D, e, s)
 \author{ Jari Oksanen } 
 
 \seealso{
-\code{\link{lotkaprey}}.
+\code{\link{lotkaprey}}, \code{\link{lotkapreyK}}.
 }
 
 \examples{
 mod <- rmprey(0.8, 1000, 5, 400, 0.07, 0.2)
 mod
+op <- par(no.readonly = TRUE)
+layout(matrix(c(1,1, 1,1, 2,2), ncol = 2, byrow=TRUE))
 plot(mod)
 lines(mod, 1000, 100)
 plot(traj(mod, 1000, 100))
+par(op)
 }
 
 \keyword{ models }
