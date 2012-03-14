@@ -38,15 +38,20 @@ lotkapreyK(a, b, c, d, K)
 
 \details{ The model is identical to \code{\link{lotkaprey}} except that
   the prey \eqn{N} is density dependent following the logistic
-  population growth model:
+  population growth model with carrying capacity \eqn{K}, prey growth
+  rate \eqn{a}, attack rate \eqn{b} and predator density \eqn{P}:
   \deqn{\frac{dN}{dt} = aN(1 - N/K) - bNP}{dN/dt = a*N*(1-N/K) - b*N*P}
-  The predator model is identical to the basic Lotka-Volterra model
-  (\code{\link{lotkaprey}}). The Rosenzweig-MacArtur model uses the same
-  prey model as this function, but it applies type II functional
-  response for the predator. The density-dependent Lotka-Volterra model
-  is not commonly represented in ecology texbooks, but it is an
-  educating step between basic Lotka-Volterra and Rosenzweig-MacArthur
-  models. The density dependent Lotka-Volterra model always has a stable
+  Other parameters and the predator model are identical to the basic
+  Lotka-Volterra model (\code{\link{lotkaprey}}). The
+  Rosenzweig-MacArtur model uses the same prey model as this function,
+  but applies type II functional response for the predator. The
+  density-dependent Lotka-Volterra model is not commonly represented in
+  ecology texbooks, but it is an educating step between basic
+  Lotka-Volterra and Rosenzweig-MacArthur models. The predator isocline
+  is identical to the basic model, but the prey isocline is a line
+  reaching \eqn{P = 0} at carrying capacity \eqn{K}, and the intercept
+  at \eqn{N} equal to the prey isocline of the basic Lotka-Volterra
+  model. The density dependent Lotka-Volterra model always has a stable
   equilibrium point.
 
   Function \code{lotkapreyK} set ups the model, \code{plot} displays the
@@ -64,7 +69,7 @@ lotkapreyK(a, b, c, d, K)
 }
 \note{
   The parametrization vary: the one in this function is the same as used
-  in my lectures.
+  in my lectures for the basic Lotka-Volterra model.
 }
 
 
