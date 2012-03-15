@@ -23,7 +23,7 @@
         }
     }
     out <- exp(out)
-    out <- cbind("Time" = seq_len(nrow(out)), out)
+    out <- cbind("Time" = seq(0, time), out)
     class(out) <- "traj"
     obj <- list("traj" = out, "N0" = N0, "r" = r, "sd" = sd,
                 "K" = K, "time" = time, "rep" = rep,
