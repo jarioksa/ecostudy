@@ -12,7 +12,7 @@
 ## c[R,S]: consumption rate
 
 `tilman` <-
-    function(S, a, r, m, k, c)
+    function(S, a, r, m, k, c, Rnames, Spnames)
 {
     ## Interpret number of resources and number of species from input
     ## parameter
@@ -28,10 +28,21 @@
         k <- matrix(k, nrow = nres, ncol = nsp, byrow = TRUE)
     if (!is.matrix(c))
         c <- matrix(c, nrow = nres, ncol = nsp, byrow = TRUE)
+    ## Names
+    if (missing(Rnames))
+        Rnames <- paste("R", seq_len(nres), sep = "")
+    if (missing(Spnames))
+        Spnames <- paste("Sp", seq_len(nsp), sep = "")
+    names(S) <- names(a) <- rownames(k) <- rownames(c) <- Rnames
+    names(r) <- names(m) <- colnames(k) <- colnames(c) <- Spnames 
     ## Model solutions
     Rstar <- sweep(sweep(k, 2, m, "*"), 2, r-m, "/")
     Nstar <- a * sweep(-Rstar, 1,  S, "+") / sweep(c, 2, m, "*")
-    list(Rstar = Rstar, Nstar = Nstar)
+    out <- list(S = S, a = a, r = r, m = m, k = k, c = c,
+                Rstar = Rstar, Nstar = Nstar,
+                nres = nres, nsp = nsp)
+    class(out) <- "tilman"
+    out
 }
 
 ## Differential equations
