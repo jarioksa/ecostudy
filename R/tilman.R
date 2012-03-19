@@ -22,7 +22,7 @@
     if (length(a) < nres)
         a <- rep(a, nres)
     if (length(m) < nsp)
-        m <- rep(a, nsp)
+        m <- rep(m, nsp)
     ## Take care that c and k are matrices
     if (!is.matrix(k))
         k <- matrix(k, nrow = nres, ncol = nsp, byrow = TRUE)
@@ -40,7 +40,7 @@
     Nstar <- a * sweep(-Rstar, 1,  S, "+") / sweep(c, 2, m, "*")
     out <- list(S = S, a = a, r = r, m = m, k = k, c = c,
                 Rstar = Rstar, Nstar = Nstar,
-                nres = nres, nsp = nsp)
+                nres = nres, nsp = nsp, call = match.call())
     class(out) <- "tilman"
     out
 }
