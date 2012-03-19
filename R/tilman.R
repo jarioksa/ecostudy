@@ -47,7 +47,7 @@
 
 ## Differential equations
 
-odeTilman <-
+`diffTilman` <-
     function(t, y, p, ...)
 {
     Ry <- y[1:p$nres]
@@ -60,4 +60,23 @@ odeTilman <-
     dR.dt <- dR.dt1 - dR.dt2
     dN.dt <- apply(Ny * dN.Ndt, 2, min)
     list(c(dR.dt, dN.dt))
+}
+
+## trajectories
+
+`traj.tilman` <-
+    function(x, R, N, time = 40, step = 1, ...)
+{
+    if (missing(R))
+        R <- x$S
+    if (is.null(names(R)))
+        names(R) <- paste("R", seq_len(x$nres), sep = "")
+    if (missing(N)) 
+        N <- rep(1, x$nsp)
+    names(N) <- names(x$r)
+    initial <- c(R, N)
+    time <- seq(from = 0, to = time, by = step)
+    out <- ode(y = initial, time = time, func = diffTilman, parms = x)
+    class(out) <- c("traj", class(out))
+    out
 }
