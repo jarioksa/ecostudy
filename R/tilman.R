@@ -64,6 +64,11 @@
 
 ## trajectories
 
+## THINK THIS: should S (supply point) be configurable here instead of
+## being a constant model parameter -- this will be important for
+## multi-resource models where the supply point can define the end
+## result.
+
 `traj.tilman` <-
     function(x, R, N, time = 40, step = 1, ...)
 {
