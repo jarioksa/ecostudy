@@ -45,6 +45,23 @@
     out
 }
 
+## print
+
+`print.tilman`  <-
+    function(x, ...)
+{
+    cat("\nTilman Competition Model for Essential Resources\n")
+    cat("\nCall:", deparse(x$call), "\n\n")
+    cat("Number of Resources:", x$nres, "\n")
+    cat("Number of Species:  ", x$nsp, "\n\n")
+    cat("Equilibrium Levels of Resources:\n")
+    print(x$Rstar)
+    cat("\nCorresponding Population Sizes:\n")
+    print(x$Nstar)
+    cat("\n")
+    invisible(x)
+}
+
 ## Differential equations
 
 `diffTilman` <-
