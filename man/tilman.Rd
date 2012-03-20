@@ -2,6 +2,7 @@
 \alias{tilman}
 \alias{diffTilman}
 \alias{traj.tilman}
+\alias{plot.tilman}
 \alias{print.tilman}
 
 \title{
@@ -15,6 +16,7 @@
 
 \usage{
 tilman(S, a, r, m, k, c, Rnames, Spnames)
+\method{plot}{tilman}(x, R, N, time = 40, step = 0.2, lwd = 1, col, ...)
 \method{traj}{tilman}(x, R, N, time = 40, step = 1, ...)
 }
 
@@ -40,6 +42,8 @@ tilman(S, a, r, m, k, c, Rnames, Spnames)
     levels.}
 
   \item{time, step}{Total time and time step for trajectories}
+
+  \item{lwd, col}{The line width and colours for trajectory lines.}
 
   \item{\dots}{Other parameters passed to functions.}
 }
@@ -107,8 +111,7 @@ tilman(S, a, r, m, k, c, Rnames, Spnames)
 \examples{
 mod <- tilman(S = 20, a = 0.5, r = c(2,1), m = 0.5, k = c(5,0.5), c = 0.1)
 mod
-tr <- traj(mod)
-tr[nrow(tr),]
+plot(mod)
 }
 
 \keyword{ models }

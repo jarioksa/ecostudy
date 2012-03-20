@@ -102,3 +102,40 @@
     class(out) <- c("traj", class(out))
     out
 }
+
+## plot
+
+`plot.tilman` <-
+    function(x, R, N, time = 40, step = 0.2, lwd = 1, col, ...)
+{
+    if (missing(col))
+        col <- c(1,4,2,3,5:8)
+    tr <- traj(x, R = R, N = N, time = time, step = step, ...)
+    ## Scale resource axes to the same range as population sizes
+    rax <- seq_len(x$nres) + 1
+    resran <- range(tr[, rax])
+    popmax <- max(tr[, -c(1, rax)])
+    resmul <- popmax/resran[2]
+    tr[,rax] <- resmul * tr[,rax]
+    plot(tr, col = col, lwd = lwd, ...)
+    ## Add Resource legend to the right if there is space
+    if ((mar4 <- par("mar")[4]) >= 2) {
+        ## logarithmic y axis is trickier: this uses grDevices
+        ## functions .axisPars and axisTicks
+        if (par("ylog")) {
+            usr <- log10(resran)
+            p <- .axisPars(usr, log = TRUE)
+            at <- axisTicks(usr, log = TRUE, c(p$axp, p$n))
+            axis(4, at = resmul * at, labels = at)
+        } else {
+            at <- pretty(resran)
+            axis(4, at = resmul*at, labels=at)
+        }
+        if (mar4 >= 3)
+            mtext("Resources", side = 4, line = 2)
+    }
+    ## If there is only one resource, plot its isoclines
+    if (x$nres == 1)
+        abline(h = x$Rstar * resmul, col = col[-1], lty = 3)
+    invisible(tr)
+}
