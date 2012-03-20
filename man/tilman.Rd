@@ -55,7 +55,7 @@ tilman(S, a, r, m, k, c, Rnames, Spnames)
   \eqn{R^*}{R*}. The differential equation for the change in the
   available amount of resource \eqn{i} and species \eqn{j} is given as
 
-  \deqn{\frac{dR_i}{dt}=a_J(S_i-R_i) - \sum_j \left(c_{ij} \left(\frac{dN_j}{dt} + N_j m_j \right) \right)\;,}{dR[i]/dt = a[i]*(S[i]-R[i]) - SUM(j)(c[ij] * (dN[j]/dt + N[j]*m[j])),}
+  \deqn{\frac{dR_i}{dt}=a_i(S_i-R_i) - \sum_j \left(c_{ij} \left(\frac{dN_j}{dt} + N_j m_j \right) \right)\;,}{dR[i]/dt = a[i]*(S[i]-R[i]) - SUM(j)(c[ij] * (dN[j]/dt + N[j]*m[j])),}
 
   where \eqn{R} and \eqn{S} are current resource level and its supply
   point, eqn{a} is the resource mobilization rate from \eqn{S} to
@@ -64,7 +64,7 @@ tilman(S, a, r, m, k, c, Rnames, Spnames)
   rate. The corresponding change in the population size (that also
   appears in the equation above) is
 
-  \deqn{\frac{dN_j}{dt} = N_j \left(\frac{r_j R_i}{R_i + k_{ij}} \right) \;, }{dN[j]/dt = N[j] * (r[j] * R[i] / (R[i] + k[ij] - m[i])),}
+  \deqn{\frac{dN_j}{dt} = N_j \left(\frac{r_j R_i}{R_i + k_{ij}} - m_j \right) \;, }{dN[j]/dt = N[j] * (r[j] * R[i] / (R[i] + k[ij]) - m[j]),}
 
   where \eqn{r} is the per capita growth rate of \eqn{N} and \eqn{k}
   is the half-saturation parameter of the Monod equation that
