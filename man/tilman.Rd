@@ -20,13 +20,14 @@ tilman(S, a, r, m, k, c, Rnames, Spnames)
 \arguments{
   \item{S, a}{Supply points and mobilation rates for resources.}
   
-  \item{r, m}{Per capita rates of population increas and mortality for
+  \item{r, m}{Per capita rates of population increase and mortality for
     each species.}
 
   \item{k, c}{Half-saturation constants and consumption rates for each
     species and resource. For multi-resource models, these must be
     matrices with a row for each resource and column for each
-    species. The matrix can also be given as a single vector by row.}
+    species. The matrix can also be given as a single vector elements
+    ordered by row.}
 
   \item{Rnames, Spnames}{Names of resources and species. Defaults will
     be used if not given.}
@@ -43,7 +44,41 @@ tilman(S, a, r, m, k, c, Rnames, Spnames)
 }
 
 \details{
-  Details to come.
+
+  The populations grow by consuming resources, and the population
+  growths stop when resources are depleted to a critical level
+  \eqn{R^*}{R*}. The differential equation for the change in the
+  available amount of resource \eqn{i} and species \eqn{j} is given as
+
+  \deqn{\frac{dR_i}{dt}=a_J(S_i-R_i) - \sum_j \left(c_{ij} \left(\frac{dN_j}{dt} + N_j m_j \right) \right)\;,}{dR[i]/dt = a[i]*(S[i]-R[i]) - SUM(j)(c[ij] * (dN[j]/dt + N[j]*m[j])),}
+
+  where \eqn{R} and \eqn{S} are current resource level and its supply
+  point, eqn{a} is the resource mobilization rate from \eqn{S} to
+  \eqn{R}, \eqn{N} is the current population size, \eqn{m} its per
+  capita mortality rate, and \eqn{c} the resource consumption
+  rate. The corresponding change in the population size (that also
+  appears in the equation above) is
+
+  \deqn{\frac{dN_j}{dt} = N_j \left(\frac{r_j R_i}{R_i + k_{ij}} \right) \;, }{dN[j]/dt = N[j] * (r[j] * R[i] / (R[i] + k[ij] - m[i])),}
+
+  where \eqn{r} is the per capita growth rate of \eqn{N} and \eqn{k}
+  is the half-saturation parameter of the Monod equation that
+  describes the relationship between resource use and population size.
+
+  The population growth stops when the resource level for the critical
+  resource is
+
+  \deqn{R^*_i = \frac{k_{ij} m_j}{r_j - m_j}\;.}{R*[i] = k[ij]*m[j]/(r[j] - m[j]).}
+
+  The corresponding maximum population size is
+
+  \deqn{N^*_j = \frac{a_i (S_i - R^*_i)}{c_{ij} m_j}\;.}{N*[j] = a[i] * (S[i] - R*[i])/(c[ij] * m[j]).}
+
+  With one resource, the winner will be the species with lowest
+  \eqn{R^*}{R*} with population size \eqn{N^*}{N*} and all other
+  species will have \eqn{N^* = 0}{N* = 0}. The outcome of multi-resource
+  model is best inspected with simulations and graphics.
+
 }
 
 \value{
