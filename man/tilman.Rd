@@ -2,6 +2,7 @@
 \alias{tilman}
 \alias{diffTilman}
 \alias{traj.tilman}
+\alias{print.tilman}
 
 \title{
   Tilman Resource Competition Model
@@ -105,7 +106,7 @@ tilman(S, a, r, m, k, c, Rnames, Spnames)
 
 \examples{
 mod <- tilman(S = 20, a = 0.5, r = c(2,1), m = 0.5, k = c(5,0.5), c = 0.1)
-str(mod)
+mod
 tr <- traj(mod)
 tr[nrow(tr),]
 }
