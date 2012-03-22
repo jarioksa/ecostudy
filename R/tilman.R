@@ -71,11 +71,11 @@
     Ny <- y[-(1:p$nres)]
     up <- outer(Ry, p$r, "*")
     down <- sweep(p$k, 1, Ry, "+")
-    dN.Ndt <- up/down - p$m
+    dN.Ndt <- apply(sweep(up/down, 2, p$m, "-"), 2, min)
     dR.dt1 <- p$a * (p$S - Ry) 
-    dR.dt2 <- rowSums(sweep(p$c * sweep(dN.Ndt, 2, p$m, "+"), 2, Ny, "*"))
+    dR.dt2 <- rowSums(sweep(p$c, 2, Ny * (dN.Ndt + p$m), "*")) 
     dR.dt <- dR.dt1 - dR.dt2
-    dN.dt <- apply(Ny * dN.Ndt, 2, min)
+    dN.dt <- Ny * dN.Ndt
     list(c(dR.dt, dN.dt))
 }
 
@@ -106,10 +106,20 @@
 ## plot
 
 `plot.tilman` <-
-    function(x, R, N, time = 40, step = 0.2, lwd = 1, col, ...)
+    function(x, R, N, kind = c("time", "resource"), time = 40, step = 0.2,
+             lwd = 1, col, ...)
 {
+    kind <- match.arg(kind)
+    if (kind == "resource")
+        .NotYetUsed("kind", error = FALSE)
+    ## don't know how to do "resource" plot for more than two
+    ## resources
+    if (x$nres > 2)
+        kind <- "time"
+    ## default col
     if (missing(col))
         col <- c(1,4,2,3,5:8)
+    ## get traj
     tr <- traj(x, R = R, N = N, time = time, step = step, ...)
     ## Scale resource axes to the same range as population sizes
     rax <- seq_len(x$nres) + 1
@@ -137,5 +147,8 @@
     ## If there is only one resource, plot its isoclines
     if (x$nres == 1)
         abline(h = x$Rstar * resmul, col = col[-1], lty = 3)
+    ## if there is only one speices, plot all resource isoclines
+    else if (x$nsp == 1)
+        abline(h = x$Rstar * resmul, col = col, lty=3)
     invisible(tr)
 }

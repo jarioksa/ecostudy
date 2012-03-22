@@ -16,7 +16,8 @@
 
 \usage{
 tilman(S, a, r, m, k, c, Rnames, Spnames)
-\method{plot}{tilman}(x, R, N, time = 40, step = 0.2, lwd = 1, col, ...)
+\method{plot}{tilman}(x, R, N, kind = c("time", "resource"), time = 40, 
+   step = 0.2, lwd = 1, col, ...)
 \method{traj}{tilman}(x, R, N, time = 40, step = 1, ...)
 }
 
@@ -41,6 +42,10 @@ tilman(S, a, r, m, k, c, Rnames, Spnames)
     to supply level \code{S} for resources, and 1 to population
     levels.}
 
+  \item{kind}{Kind of plot: \code{"time"} plots resource levels and
+    population sizes against time, and \code{"kind"} plots resource
+    trajectories in a space of two resources. (Not yet implemented.)}
+
   \item{time, step}{Total time and time step for trajectories}
 
   \item{lwd, col}{The line width and colours for trajectory lines.}
@@ -64,11 +69,13 @@ tilman(S, a, r, m, k, c, Rnames, Spnames)
   rate. The corresponding change in the population size (that also
   appears in the equation above) is
 
-  \deqn{\frac{dN_j}{dt} = N_j \left(\frac{r_j R_i}{R_i + k_{ij}} - m_j \right) \;, }{dN[j]/dt = N[j] * (r[j] * R[i] / (R[i] + k[ij]) - m[j]),}
+  \deqn{\frac{dN_j}{dt} = \min_i N_j \left(\frac{r_j R_i}{R_i + k_{ij}} - m_j \right) \;, }{dN[j]/dt = min(i) N[j] * (r[j] * R[i] / (R[i] + k[ij]) - m[j]),}
 
   where \eqn{r} is the per capita growth rate of \eqn{N} and \eqn{k}
   is the half-saturation parameter of the Monod equation that
-  describes the relationship between resource use and population size.
+  describes the relationship between resource use and population size,
+  and \eqn{min} selects the resource that gives the smallest response
+  for the species.
 
   The population growth stops when the resource level for the critical
   resource is
