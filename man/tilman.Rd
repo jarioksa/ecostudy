@@ -3,6 +3,7 @@
 \alias{diffTilman}
 \alias{traj.tilman}
 \alias{plot.tilman}
+\alias{tilmandiagr}
 \alias{print.tilman}
 
 \title{
@@ -16,8 +17,8 @@
 
 \usage{
 tilman(S, a, r, m, k, c, Rnames, Spnames)
-\method{plot}{tilman}(x, R, N, kind = c("time", "resource"), time = 40, 
-   step = 0.2, lwd = 1, col, ...)
+\method{plot}{tilman}(x, R, N, time = 40, step = 0.2, lwd = 1, col, ...)
+tilmandiagr(x, R, N, S, col = c(4,2,1), add = FALSE, ...)
 \method{traj}{tilman}(x, R, N, time = 40, step = 1, ...)
 }
 
@@ -42,9 +43,7 @@ tilman(S, a, r, m, k, c, Rnames, Spnames)
     to supply level \code{S} for resources, and 1 to population
     levels.}
 
-  \item{kind}{Kind of plot: \code{"time"} plots resource levels and
-    population sizes against time, and \code{"kind"} plots resource
-    trajectories in a space of two resources. (Not yet implemented.)}
+  \item{add}{Add new resource trajectories to an existing diagram.}
 
   \item{time, step}{Total time and time step for trajectories}
 
@@ -90,6 +89,16 @@ tilman(S, a, r, m, k, c, Rnames, Spnames)
   \eqn{R^*}{R*} with population size \eqn{N^*}{N*} and all other
   species will have \eqn{N^* = 0}{N* = 0}. The outcome of multi-resource
   model is best inspected with simulations and graphics.
+
+  Function \code{plot} shows resource levels and population
+  trajectories against time. The critical resource levels
+  (\eqn{R^*}{R*}) are also displayed if there is only one resource or
+  one species. Function \code{tilmandiagr} makes the traditional
+  Tilman graphics of resource trajectories in a two-resource plan
+  together with \eqn{R^*}{R*} lines for each species.  The diagram
+  will be only drawn for two-resource models, but the number of
+  species is not limited. Function \code{traj} is used to calculate
+  the resource and population trajectories.
 
 }
 

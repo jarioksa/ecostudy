@@ -106,17 +106,8 @@
 ## plot
 
 `plot.tilman` <-
-    function(x, R, N, kind = c("time", "resource"), time = 40, step = 0.2,
-             lwd = 1, col, ...)
+    function(x, R, N, time = 40, step = 0.2, lwd = 1, col, ...)
 {
-    kind <- match.arg(kind)
-    if (kind == "resource")
-        .NotYetUsed("kind", error = FALSE)
-    ## don't know how to do "resource" plot for more than two
-    ## resources
-    if (x$nres > 2)
-        kind <- "time"
-    ## default col
     if (missing(col))
         col <- c(1,4,2,3,5:8)
     ## get traj
@@ -151,4 +142,31 @@
     else if (x$nsp == 1)
         abline(h = x$Rstar * resmul, col = col, lty=3)
     invisible(tr)
+}
+
+## Tilman resource plane plots
+
+tilmandiagr <-
+    function(x, R, N, S, col = c(4,2,1), add = FALSE, ...)
+{
+    if (x$nres != 2)
+        stop("only 2 resources allowed in resource diagrams")
+    if (!missing(S))
+        x <- update(x, S = S)
+    tr <- traj(x, ...)
+    nms <- colnames(tr)[2:3]
+    if (!add) {
+        plot(c(0, x$S[1]), c(0, x$S[2]), type = "n",
+             xlab = paste("Resource", nms[1]),
+             ylab = paste("Resource", nms[2]))
+        usr <- par("usr")
+        for(k in seq_len(x$nsp)) {
+            lines(c(x$Rstar[1,k], x$Rstar[1,k], usr[2]),
+                  c(usr[4], x$Rstar[2,k], x$Rstar[2,k]), col = col[k])
+        }
+    }
+    k <- x$nsp + 1
+    points(x$S[1], x$S[2], pch = 16, col = col[k])
+    lines(tr[,2:3], col = col[k])
+    invisible()
 }
