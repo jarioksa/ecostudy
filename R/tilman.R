@@ -159,13 +159,13 @@ tilmandiagr <-
     tr <- traj(x, ...)
     nms <- colnames(tr)[2:3]
     if (!add) {
-        if (!missing(xlab))
+        if (missing(xlab))
             xlab = paste("Resource", nms[1])
-        if (!missing(ylab))
+        if (missing(ylab))
             ylab = paste("Resource", nms[2])
-        if (!missing(xlim))
+        if (missing(xlim))
             xlim <- c(0, x$S[1])
-        if (!missing(ylim))
+        if (missing(ylim))
             ylim <- c(0, x$S[2])
         plot(c(0, x$S[1]), c(0, x$S[2]), type = "n",
              xlab = xlab, ylab = ylab, xlim = xlim, ylim = ylim)
