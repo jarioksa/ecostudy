@@ -106,10 +106,12 @@
 ## plot
 
 `plot.tilman` <-
-    function(x, R, N, time = 40, step = 0.2, lwd = 1, col, ...)
+    function(x, R, N, S, time = 40, step = 0.2, lwd = 1, col,  ...)
 {
     if (missing(col))
         col <- c(1,4,2,3,5:8)
+    if (!missing(S))
+        x <- update(x, S = S)
     ## get traj
     tr <- traj(x, R = R, N = N, time = time, step = step, ...)
     ## Scale resource axes to the same range as population sizes
@@ -133,7 +135,7 @@
             axis(4, at = resmul*at, labels=at)
         }
         if (mar4 >= 3)
-            mtext("Resources", side = 4, line = 2)
+            mtext("Resources", side = 4, line = 2, cex = par("cex.axis"))
     }
     ## If there is only one resource, plot its isoclines
     if (x$nres == 1)
@@ -147,7 +149,8 @@
 ## Tilman resource plane plots
 
 tilmandiagr <-
-    function(x, R, N, S, col = c(4,2,1), add = FALSE, ...)
+    function(x, R, N, S, col = c(4,2,1), add = FALSE, xlim, ylim,
+             xlab, ylab, ...)
 {
     if (x$nres != 2)
         stop("only 2 resources allowed in resource diagrams")
@@ -156,9 +159,16 @@ tilmandiagr <-
     tr <- traj(x, ...)
     nms <- colnames(tr)[2:3]
     if (!add) {
+        if (!missing(xlab))
+            xlab = paste("Resource", nms[1])
+        if (!missing(ylab))
+            ylab = paste("Resource", nms[2])
+        if (!missing(xlim))
+            xlim <- c(0, x$S[1])
+        if (!missing(ylim))
+            ylim <- c(0, x$S[2])
         plot(c(0, x$S[1]), c(0, x$S[2]), type = "n",
-             xlab = paste("Resource", nms[1]),
-             ylab = paste("Resource", nms[2]))
+             xlab = xlab, ylab = ylab, xlim = xlim, ylim = ylim)
         usr <- par("usr")
         for(k in seq_len(x$nsp)) {
             lines(c(x$Rstar[1,k], x$Rstar[1,k], usr[2]),

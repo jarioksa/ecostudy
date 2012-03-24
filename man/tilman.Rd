@@ -17,8 +17,9 @@
 
 \usage{
 tilman(S, a, r, m, k, c, Rnames, Spnames)
-\method{plot}{tilman}(x, R, N, time = 40, step = 0.2, lwd = 1, col, ...)
-tilmandiagr(x, R, N, S, col = c(4,2,1), add = FALSE, ...)
+\method{plot}{tilman}(x, R, N, S, time = 40, step = 0.2, lwd = 1, col, ...)
+tilmandiagr(x, R, N, S, col = c(4,2,1), add = FALSE, xlim, ylim, 
+   xlab, ylab, ...)
 \method{traj}{tilman}(x, R, N, time = 40, step = 1, ...)
 }
 
@@ -48,6 +49,10 @@ tilmandiagr(x, R, N, S, col = c(4,2,1), add = FALSE, ...)
   \item{time, step}{Total time and time step for trajectories}
 
   \item{lwd, col}{The line width and colours for trajectory lines.}
+
+  \item{xlim, ylim}{Axis limits.}
+
+  \item{xlab, ylab}{Axis labels.}
 
   \item{\dots}{Other parameters passed to functions.}
 }
