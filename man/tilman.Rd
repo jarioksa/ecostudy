@@ -33,7 +33,7 @@ tilmandiagr(x, R, N, S, col = c(4,2,1), add = FALSE, xlim, ylim,
     species and resource. For multi-resource models, these must be
     matrices with a row for each resource and column for each
     species. The matrix can also be given as a single vector elements
-    ordered by row.}
+    ordered by species (column).}
 
   \item{Rnames, Spnames}{Names of resources and species. Defaults will
     be used if not given.}
@@ -130,9 +130,20 @@ tilmandiagr(x, R, N, S, col = c(4,2,1), add = FALSE, xlim, ylim,
 }
 
 \examples{
+## One resource
 mod <- tilman(S = 20, a = 0.5, r = c(2,1), m = 0.5, k = c(5,0.5), c = 0.1)
 mod
 plot(mod)
+## Two resources
+mod2 <- update(mod, S=c(20,20), k=c(5,0.5, 1,2), c = c(0.15, 0.1, 0.1, 0.2))
+tilmandiagr(mod2)
+tilmandiagr(mod2, S = c(10,20), add = TRUE, time = 100)
+tilmandiagr(mod2, S = c(20,10), add = TRUE, time = 100)
+op <- par(mfrow=c(3,1), mar=c(4,4,0,1)+.1)
+plot(mod2)
+plot(mod2, S = c(10,20))
+plot(mod2, S = c(20,10))
+par(op)
 }
 
 \keyword{ models }

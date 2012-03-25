@@ -25,9 +25,9 @@
         m <- rep(m, nsp)
     ## Take care that c and k are matrices
     if (!is.matrix(k))
-        k <- matrix(k, nrow = nres, ncol = nsp, byrow = TRUE)
+        k <- matrix(k, nrow = nres, ncol = nsp, byrow = FALSE)
     if (!is.matrix(c))
-        c <- matrix(c, nrow = nres, ncol = nsp, byrow = TRUE)
+        c <- matrix(c, nrow = nres, ncol = nsp, byrow = FALSE)
     ## Names
     if (missing(Rnames))
         Rnames <- paste("R", seq_len(nres), sep = "")
