@@ -24,7 +24,7 @@ Ecology teaching package
   \itemize{
   
   \item Population growth: logistic model (\code{\link{poplogist}}),
-  stochastic logistic growth (\code{\lin{ranlogist}}), Ricker model
+  stochastic logistic growth (\code{\link{ranlogist}}), Ricker model
   (\code{\link{ricker}}), Milne's stochastic ceiling model
   (\code{\link{ranmilne}}).
 
@@ -33,7 +33,7 @@ Ecology teaching package
 
   \item Predator--Prey relationship: Lotka-Volterra model in its basic
   form (\code{\link{lotkaprey}}), and the model with density dependent
-  prey (\code{\link{lotkpareyK}}), Rosenzweit--MacArthur model
+  prey (\code{\link{lotkapreyK}}), Rosenzweig--MacArthur model
   (\code{\link{rmprey}}).  
   }
 
