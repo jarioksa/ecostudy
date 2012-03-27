@@ -46,7 +46,7 @@ lotkapreyK(a, b, c, d, K)
   Rosenzweig-MacArtur model uses the same prey model as this function,
   but applies type II functional response for the predator. The
   density-dependent Lotka-Volterra model is not commonly represented in
-  ecology texbooks, but it is an educating step between basic
+  ecology textbooks, but it is an educating step between basic
   Lotka-Volterra and Rosenzweig-MacArthur models. The predator isocline
   is identical to the basic model, but the prey isocline is a line
   reaching \eqn{P = 0} at carrying capacity \eqn{K}, and the intercept

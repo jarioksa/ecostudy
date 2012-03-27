@@ -2,7 +2,7 @@
 \alias{lynxhare}
 \docType{data}
 \title{
-Hudson Bay Trading Compary Lynx and Hare Trapping Data
+Hudson Bay Trading Company Lynx and Hare Trapping Data
 }
 \description{
   The number of pelts (in thousands) traded with the Hudson Bay Trading

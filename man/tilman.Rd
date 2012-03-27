@@ -24,7 +24,7 @@ tilmandiagr(x, R, N, S, col = c(4,2,1), add = FALSE, xlim, ylim,
 }
 
 \arguments{
-  \item{S, a}{Supply points and mobilation rates for resources.}
+  \item{S, a}{Supply points and mobilization rates for resources.}
   
   \item{r, m}{Per capita rates of population increase and mortality for
     each species.}

@@ -9,7 +9,7 @@
 
 \description{
   Function \code{traj} is a generic method that extracts time and
-  population sizzes from population models.  The \code{plot} function
+  population sizes from population models.  The \code{plot} function
   presents population size(s) against time.
 }
 

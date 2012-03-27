@@ -42,7 +42,7 @@ ricker(N, R, K, b)
   \deqn{a = ((R-1)^{1/b})/K.}
 
   The current formulation follows Begon et al. (2006). Krebs (2009,
-  p. 153) uses different parametrization and discuesses the model
+  p. 153) uses different parametrization and discusses the model
   under \dQuote{time lag models}.
 
 }

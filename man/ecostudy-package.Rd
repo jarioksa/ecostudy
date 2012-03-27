@@ -19,7 +19,7 @@ Ecology teaching package
 \details{
 
   The package contains basic ecological models for population dynamics
-  of single species and two-species interacations.  The models
+  of single species and two-species interactions.  The models
   include:
   \itemize{
   
