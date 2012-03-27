@@ -9,10 +9,13 @@
   Milne Stochastic Ceiling Model for Population Size
 }
 \description{
-  Milne Ceiling model is a stochastic model where the population growth
-  is in the range zero to carrying capacity.  It seems to be
+  
+  Milne Ceiling model is a stochastic model where the population
+  growth is in the range zero to carrying capacity.  It seems to be
   particularly suitable for small populations which are often close to
-  their carrying capacity.
+  their carrying capacity, and is much used in metapopulation research
+  (Hanski 2005).
+
 }
 \usage{
 ranmilne(N0, r, sd, K, time = 100, rep = 1)
@@ -76,6 +79,12 @@ ranmilne(N0, r, sd, K, time = 100, rep = 1)
   this was not  yet checked.
 }
 
+\references{
+
+  Hanski, I (2005) \emph{The Shrinking World: Ecological Consequences
+  of Habitat Loss.} International Ecological Institute, 307 p.
+
+}
 
 \seealso{
   \code{\link{ranlogist}}.

@@ -40,6 +40,11 @@ ricker(N, R, K, b)
   \deqn{N_{t+1} = R N_t / (1 + (aN)^b) \,}{N[t+1] = r*N[t]/(1+(a*N)^b),}
   where
   \deqn{a = ((R-1)^{1/b})/K.}
+
+  The current formulation follows Begon et al. (2006). Krebs (2009,
+  p. 153) uses different parametrization and discuesses the model
+  under \dQuote{time lag models}.
+
 }
 
 \value{
@@ -47,6 +52,17 @@ ricker(N, R, K, b)
   parameter \eqn{a} and population sizes \eqn{N} at each step, and the
   function \code{call}.
 }
+
+\references{
+
+  Begon, M., Townsend, C.R. & Harper, J.L. (2006) \emph{Ecology: From
+  Individuals to Ecosystems.} John Wiley & Sons, 738 p.
+
+  Krebs, C. J. (2009) \emph{Ecology.} Benjaming Cummings. 6 ed., 655 p.
+
+}
+
+\author{Jari Oksanen}
 
 \examples{
 par(mfrow=c(2,2))

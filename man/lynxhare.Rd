@@ -23,10 +23,11 @@ Hudson Bay Trading Compary Lynx and Hare Trapping Data
   (including plant--hare) and collected from various areas, and are
   hardly a demonstration of a predator--prey cycle alone.
 
-  The lynx data are also provided in the standard \R dataset
-  \code{\link{lynx}} (with slightly different time range). The dataset
-  is a data frame that also inherits from class \code{"traj"} so that
-  \code{\link{plot.traj}} can be used to display its results.
+  The lynx data for the MacKenzie River area are provided in the
+  standard \R dataset \code{\link{lynx}}, whereas the current data
+  covers all Hudson Bay areas in Northern America. The dataset is a
+  data frame that also inherits from class \code{"traj"} so that
+  \code{\link{plot.traj}} can be used to display its results.  
 }
 
 \source{

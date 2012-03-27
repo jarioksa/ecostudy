@@ -6,7 +6,7 @@
 }
 \description{
   Function returns the expected value at a given time for the logistic
-  populatoin growth.
+  population growth.
 }
 \usage{
 poplogist(t, r, N0, K)
@@ -27,7 +27,14 @@ poplogist(t, r, N0, K)
 }
 }
 \details{
+  
+  The logistic model is usually parametrized in ecology as:  
+
   \deqn{N = \frac{K}{1 + \frac{K-N_0}{N_0}\exp(-rt)}}{N = K/(1 + (K-N0)/N0 * exp(-r * t))}
+
+  Function \code{\link{plogis}} and allies and \code{\link{SSlogis}}
+  define the same model with different parametrization.
+
 }
 \value{
   Function returns a vector of populations sizes corresponding to input

@@ -44,7 +44,13 @@ rmprey(b, K, w, D, e, s)
   production efficiency of the predator, and \eqn{s} is the predator
   mortality rate. Except for parameters \eqn{K} and \eqn{D} these are
   the same parameters as in the Lotka-Volterra predator-prey model
-  (\code{\link{lotkaprey}}).  
+  (\code{\link{lotkaprey}}).
+
+  The current implementation is based on Stevens (2009).  This is the
+  main predator--prey model in Krebs (2009, p. 191--195). However, it
+  seems that the graphics are conceptual rather than produced by
+  rigorous mathematics, and cannot be exactly reproduced with the used
+  functional response models.
 
   Function \code{rmprey} set ups the model, and \code{plot} draws the
   phase diagram.
@@ -73,6 +79,14 @@ rmprey(b, K, w, D, e, s)
 }
 
 \author{ Jari Oksanen } 
+
+\references{
+
+Krebs, C. J. (2009) \emph{Ecology.} Benjaming Cummings. 6 ed., 655 p.
+
+Stevens, M.H.H. (2009) \emph{A Primer of Ecology with R.} Springer. 
+
+}
 
 \seealso{
 \code{\link{lotkaprey}}, \code{\link{lotkapreyK}}.

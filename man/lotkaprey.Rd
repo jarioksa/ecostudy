@@ -45,7 +45,12 @@ lotkaprey(a, b, c, d)
   Function \code{lotkaprey} set ups the model, \code{plot} displays the
   phase diagram and isoclines, and \code{lines} adds trajectories. The
   trajectories can be generated with \code{traj}.
+
+  Krebs (2009, p. 191) hardly mentions these models, although they are
+  the basis of more advanced models.  The implementation is based on
+  Stevens (2009).
 }
+
 \value{
   The function returns a \code{"lotkaprey"} result object which contains
   the input parameters and isocline values. Function \code{traj} returns
@@ -58,6 +63,12 @@ lotkaprey(a, b, c, d)
 \note{
   The parametrization vary: the one in this function is the same as used
   in my lectures.
+}
+
+\references{
+Krebs, C. J. (2009) \emph{Ecology.} Benjaming Cummings. 6 ed., 655 p.
+
+Stevens, M.H.H. (2009) \emph{A Primer of Ecology with R.} Springer. 
 }
 
 

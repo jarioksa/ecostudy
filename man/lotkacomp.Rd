@@ -45,14 +45,16 @@ lotkacomp(alpha, beta, K1, K2)
   }
 }
 \details{
-  Function \code{lotkacomp} sets a Lotka-Volterra competition
-  model. Function \code{plot} draws a phase graph. Function
+  Function \code{lotkacomp} sets a Lotka-Volterra competition model
+  (Krebs 2009, p. 165--169). The implementation is based on Stevens
+  (2009). Function \code{plot} draws a phase graph. Function
   \code{lines} adds species trajectory to the phase graph, and
   \code{traj} extracts the population trajectories. Use
   \code{\link{plot.traj}} to display the population sizes against
   time. The \code{summary} gives the winner of the competition and the
   outcome population sizes.
 }
+
 \value{
   Function \code{lotkacomp} returns a Lotka-Volterra competition object.
 }
@@ -60,6 +62,13 @@ lotkacomp(alpha, beta, K1, K2)
 \author{
   Jari Oksanen
 }
+
+\references{
+Krebs, C. J. (2009) \emph{Ecology.} Benjaming Cummings. 6 ed., 655 p.
+
+Stevens, M.H.H. (2009) \emph{A Primer of Ecology with R.} Springer. 
+}
+
 
 \examples{
 mod <- lotkacomp(0.8, 0.6, 20, 20)

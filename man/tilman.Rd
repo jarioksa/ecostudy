@@ -105,6 +105,9 @@ tilmandiagr(x, R, N, S, col = c(4,2,1), add = FALSE, xlim, ylim,
   species is not limited. Function \code{traj} is used to calculate
   the resource and population trajectories.
 
+  Krebs (2009) discusses the model on p. 168--169.  The current
+  implementation is based on Tilman (1982).
+
 }
 
 \value{
@@ -121,8 +124,10 @@ tilmandiagr(x, R, N, S, col = c(4,2,1), add = FALSE, xlim, ylim,
 
 \references{
   
+  Krebs, C. J. (2009) \emph{Ecology.} Benjaming Cummings. 6 ed., 655 p.
+
   Tilman, D. (1982) \emph{Resource competition and community
-   structure.} Princeton UP, 296pp.
+  structure.} Princeton UP, 296pp.
 
 }
 \author{
