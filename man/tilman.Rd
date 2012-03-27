@@ -124,7 +124,7 @@ tilmandiagr(x, R, N, S, col = c(4,2,1), add = FALSE, xlim, ylim,
 
 \references{
   
-  Krebs, C. J. (2009) \emph{Ecology.} Benjaming Cummings. 6 ed., 655 p.
+  Krebs, C. J. (2009) \emph{Ecology.} Benjamin Cummings. 6 ed., 655 p.
 
   Tilman, D. (1982) \emph{Resource competition and community
   structure.} Princeton UP, 296pp.

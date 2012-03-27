@@ -58,7 +58,7 @@ ricker(N, R, K, b)
   Begon, M., Townsend, C.R. & Harper, J.L. (2006) \emph{Ecology: From
   Individuals to Ecosystems.} John Wiley & Sons, 738 p.
 
-  Krebs, C. J. (2009) \emph{Ecology.} Benjaming Cummings. 6 ed., 655 p.
+  Krebs, C. J. (2009) \emph{Ecology.} Benjamin Cummings. 6 ed., 655 p.
 
 }
 

@@ -64,7 +64,7 @@ lotkacomp(alpha, beta, K1, K2)
 }
 
 \references{
-Krebs, C. J. (2009) \emph{Ecology.} Benjaming Cummings. 6 ed., 655 p.
+Krebs, C. J. (2009) \emph{Ecology.} Benjamin Cummings. 6 ed., 655 p.
 
 Stevens, M.H.H. (2009) \emph{A Primer of Ecology with R.} Springer. 
 }

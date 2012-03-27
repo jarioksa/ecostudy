@@ -63,7 +63,7 @@ ranlogist(N0, b, d, K, bcontr=0.5)
 
 \references{
   
-  Krebs, C. J. (2009) \emph{Ecology.} Benjaming Cummings. 6 ed., 655 pp.
+  Krebs, C. J. (2009) \emph{Ecology.} Benjamin Cummings. 6 ed., 655 pp.
 
   Pielou, E.C. (1969) \emph{An Introduction to Mathematical Ecology.}
   Wiley-Interscience, 286 pp.
