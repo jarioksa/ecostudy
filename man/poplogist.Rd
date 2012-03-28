@@ -32,8 +32,15 @@ poplogist(t, r, N0, K)
 
   \deqn{N = \frac{K}{1 + \frac{K-N_0}{N_0}\exp(-rt)}}{N = K/(1 + (K-N0)/N0 * exp(-r * t))}
 
-  Function \code{\link{plogis}} and allies and \code{\link{SSlogis}}
-  define the same model with different parametrization.
+  Function \code{\link{plogis}} defines a logistic model with slightly
+  different parametrization. A similar model to \code{poplogist} can be
+  defined as \code{K * plogis(-log(K/N0 - 1) + r * t)}. Function
+  \code{\link{SSlogis}} can be used to fit logistic model in non-linear
+  regression (\code{\link{nls}}, \code{\link[nlme]{lme}}) with yet
+  another parametrization.  \code{\link{SSlogis}} uses terms
+  \code{Asym}, \code{xmid} and \code{scal} which can be transformed to
+  \code{poplogist} terms as \code{K = Asym}, \code{r = 1/scal} and
+  \code{N0 = Asym/(exp(xmid/scal) + 1)}.
 
 }
 \value{
