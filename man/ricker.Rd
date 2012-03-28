@@ -37,13 +37,13 @@ ricker(N, R, K, b)
 \details{
 
   The population size \eqn{N} at time \eqn{t+1} is given as
-  \deqn{N_{t+1} = R N_t / (1 + (aN)^b) \,}{N[t+1] = r*N[t]/(1+(a*N)^b),}
+  \deqn{N_{t+1} = R N_t / (1 + (aN_t)^b) \,}{N[t+1] = r*N[t]/(1+(a*N[t])^b),}
   where
   \deqn{a = ((R-1)^{1/b})/K.}
 
-  The current formulation follows Begon et al. (2006). Krebs (2009,
-  p. 153) uses different parametrization and discusses the model
-  under \dQuote{time lag models}.
+  The current formulation follows Begon et al. (1996, p. 240--242).
+  Krebs (2009, p. 153) uses different parametrization and discusses the
+  model under \dQuote{time lag models}.
 
 }
 
@@ -55,8 +55,8 @@ ricker(N, R, K, b)
 
 \references{
 
-  Begon, M., Townsend, C.R. & Harper, J.L. (2006) \emph{Ecology: From
-  Individuals to Ecosystems.} John Wiley & Sons, 738 p.
+  Begon, M., Harper, J.L. & Townsend, C.R. (1996) \emph{Ecology:
+  Individuals, Populations and Communities.} Blackwell. 3 ed., 1068 p.
 
   Krebs, C. J. (2009) \emph{Ecology.} Benjamin Cummings. 6 ed., 655 p.
 
