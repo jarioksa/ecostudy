@@ -114,6 +114,8 @@
         x <- update(x, S = S)
     ## get traj
     tr <- traj(x, R = R, N = N, time = time, step = step, ...)
+    ## recycle col if needed
+    col <- rep(col, length = ncol(tr) - 1)
     ## Scale resource axes to the same range as population sizes
     rax <- seq_len(x$nres) + 1
     resran <- range(tr[, rax])
@@ -157,6 +159,7 @@ tilmandiagr <-
     if (!missing(S))
         x <- update(x, S = S)
     tr <- traj(x, ...)
+    col <- rep(col, length = ncol(tr) - 1)
     nms <- colnames(tr)[2:3]
     if (!add) {
         if (missing(xlab))
