@@ -72,7 +72,7 @@ traj.rmprey <-
                alpha = 1/x$K)
     initialN <- c(N, P)
     time <- seq(from = 0, to = time, by = step)
-    out <- ode(y = initialN, time = time, func = predpreyRM,
+    out <- ode(y = initialN, times = time, func = predpreyRM,
                parms = parms)
     class(out) <- c("traj", class(out))
     out

@@ -98,7 +98,7 @@
     names(N) <- names(x$r)
     initial <- c(R, N)
     time <- seq(from = 0, to = time, by = step)
-    out <- ode(y = initial, time = time, func = diffTilman, parms = x)
+    out <- ode(y = initial, times = time, func = diffTilman, parms = x)
     class(out) <- c("traj", class(out))
     out
 }
