@@ -20,18 +20,6 @@
     out
 }
 
-## brief print
-
-`print.ricker`  <-
-    function(x, ...)
-{
-    cat("\n")
-    cat("Ricker model with parameters\n")
-    cat("R = ", x$R, ", K = ", x$K, ", b = ", x$b, sep = "", "\n")
-    cat("and", length(x$N), "population values\n\n")
-    invisible(x)
-}
-
 ## extract ricker() results
 
 `traj.ricker` <-
