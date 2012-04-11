@@ -3,7 +3,6 @@
 \alias{plot.rmprey}
 \alias{traj.rmprey}
 \alias{lines.rmprey}
-\alias{print.rmprey}
 
 \title{
   Rosenzweig-MacArthur Predator-Prey Model

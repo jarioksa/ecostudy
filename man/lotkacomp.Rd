@@ -4,8 +4,6 @@
 \alias{traj.lotkacomp}
 \alias{lines.lotkacomp}
 \alias{summary.lotkacomp}
-\alias{print.summary.lotkacomp}
-\alias{print.lotkacomp}
 
 \title{
   Lotka-Volterra Competition Model

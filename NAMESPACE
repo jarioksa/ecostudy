@@ -1,0 +1,51 @@
+## Export
+
+export(lotkacomp, lotkapreyK, lotkaprey, poplogist, ranlogist,
+ranmilne, ricker, rmprey, tilman, tilmandiagr, traj)
+
+## S3method
+import(stats, graphics)
+
+S3method(print, lotkacomp)
+S3method(plot, lotkacomp)
+S3method(traj, lotkacomp)
+S3method(lines, lotkacomp)
+S3method(summary, lotkacomp)
+S3method(print, summary.lotkacomp)
+
+S3method(plot, lotkapreyK)
+S3method(traj, lotkapreyK)
+S3method(lines, lotkapreyK)
+S3method(print, lotkapreyK)
+
+S3method(plot, lotkaprey)
+S3method(traj, lotkaprey)
+S3method(lines, lotkaprey)
+S3method(print, lotkaprey)
+
+S3method(traj, ranlogist)
+S3method(plot, ranlogist)
+S3method(lines, ranlogist)
+S3method(print, ranlogist)
+
+S3method(traj, ranmilne)
+S3method(plot, ranmilne)
+S3method(lines, ranmilne)
+S3method(print, ranmilne)
+
+S3method(print, ricker)
+S3method(traj, ricker)
+S3method(plot, ricker)
+
+S3method(plot, rmprey)
+S3method(traj, rmprey)
+S3method(lines, rmprey)
+S3method(print, rmprey)
+
+S3method(print, tilman)
+S3method(traj, tilman)
+S3method(plot, tilman)
+
+
+S3method(plot, traj)
+S3method(lines, traj)

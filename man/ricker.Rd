@@ -3,7 +3,6 @@
 \alias{ricker}
 \alias{plot.ricker}
 \alias{traj.ricker}
-\alias{print.ricker}
  
 \title{Ricker's Discrete Population Growth with Time-lag}
 

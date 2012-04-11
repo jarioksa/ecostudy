@@ -1,10 +1,8 @@
 \name{tilman}
 \alias{tilman}
-\alias{diffTilman}
 \alias{traj.tilman}
 \alias{plot.tilman}
 \alias{tilmandiagr}
-\alias{print.tilman}
 
 \title{
   Tilman Resource Competition Model

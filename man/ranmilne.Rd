@@ -3,7 +3,6 @@
 \alias{traj.ranmilne}
 \alias{plot.ranmilne}
 \alias{lines.ranmilne}
-\alias{print.ranmilne}
 
 \title{
   Milne Stochastic Ceiling Model for Population Size

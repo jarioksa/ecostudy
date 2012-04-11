@@ -3,7 +3,6 @@
 \alias{plot.lotkapreyK}
 \alias{traj.lotkapreyK}
 \alias{lines.lotkapreyK}
-\alias{print.lotkapreyK}
 
 \title{
   Lotka-Volterra Predator-Prey Model with Density Dependent Prey

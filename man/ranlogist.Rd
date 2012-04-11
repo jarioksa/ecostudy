@@ -3,7 +3,6 @@
 \alias{plot.ranlogist}
 \alias{lines.ranlogist}
 \alias{traj.ranlogist}
-\alias{print.ranlogist}
 
 \title{Random Logistic Population Growth}
 \description{

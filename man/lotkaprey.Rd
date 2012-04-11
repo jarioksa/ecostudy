@@ -3,7 +3,6 @@
 \alias{plot.lotkaprey}
 \alias{traj.lotkaprey}
 \alias{lines.lotkaprey}
-\alias{print.lotkaprey}
 
 \title{
   Lotka-Volterra Predator-Prey Model
