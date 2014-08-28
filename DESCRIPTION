@@ -8,5 +8,5 @@ Description: Functions to aid understanding ecological models for
   Ecology 101 level, principally based on Krebs textbook on Ecology, but
   with sidetracks to other basic textbook models.
 Depends: primer
-License: GPL2
+License: GPL-2
 URL: http://cc.oulu.fi/~jarioksa/
