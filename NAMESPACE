@@ -5,6 +5,8 @@ ranmilne, ricker, rmprey, tilman, tilmandiagr, traj)
 
 ## S3method
 import(stats, graphics)
+importFrom(primer, lvcomp2, predpreyLV, predpreyRM)
+importFrom(deSolve, ode)
 
 S3method(print, lotkacomp)
 S3method(plot, lotkacomp)
