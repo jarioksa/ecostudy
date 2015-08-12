@@ -4,7 +4,7 @@ export(lotkacomp, lotkapreyK, lotkaprey, poplogist, ranlogist,
 ranmilne, ricker, rmprey, tilman, tilmandiagr, traj)
 
 ## S3method
-import(stats, graphics)
+import(stats, graphics, grDevices)
 importFrom(primer, lvcomp2, predpreyLV, predpreyRM)
 importFrom(deSolve, ode)
 
