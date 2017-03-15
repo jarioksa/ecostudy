@@ -8,9 +8,9 @@
 
 \description{
 
-  Function finds a deterministic discrete population growth
-  model (Ricker model) and draws side by side population size against
-  time and a phase diagram of population size and population increase. 
+  Function finds a deterministic discrete population growth model
+  (Ricker model) and draws population size against time and a phase
+  diagram of population size and population increase side by side.
 
 }
 
