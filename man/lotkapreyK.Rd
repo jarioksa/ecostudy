@@ -36,7 +36,7 @@ lotkapreyK(a, b, c, d, K)
 }
 
 \details{ The model is identical to \code{\link{lotkaprey}} except that
-  the prey \eqn{N} is density dependent following the logistic
+  the prey \eqn{N} is density-dependent following the logistic
   population growth model with carrying capacity \eqn{K}, prey growth
   rate \eqn{a}, attack rate \eqn{b} and predator density \eqn{P}:
   \deqn{\frac{dN}{dt} = aN(1 - N/K) - bNP}{dN/dt = a*N*(1-N/K) - b*N*P}
@@ -49,7 +49,7 @@ lotkapreyK(a, b, c, d, K)
   Lotka-Volterra and Rosenzweig-MacArthur models. The predator isocline
   is identical to the basic model, but the prey isocline is a line
   reaching \eqn{P = 0} at carrying capacity \eqn{K}, and the intercept
-  at \eqn{N} equal to the prey isocline of the basic Lotka-Volterra
+  at \eqn{N} is equal to the prey isocline of the basic Lotka-Volterra
   model. The density dependent Lotka-Volterra model always has a stable
   equilibrium point.
 

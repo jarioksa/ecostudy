@@ -47,7 +47,7 @@ rmprey(b, K, w, D, e, s)
 
   The current implementation is based on Stevens (2009).  This is the
   main predator--prey model in Krebs (2009, p. 191--195). However, it
-  seems that the graphics are conceptual rather than produced by
+  seems that his graphics are conceptual rather than produced by
   rigorous mathematics, and cannot be exactly reproduced with the used
   functional response models.
 

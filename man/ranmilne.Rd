@@ -53,7 +53,7 @@ ranmilne(N0, r, sd, K, time = 100, rep = 1)
 \details{
 
   The logarithmic population size \eqn{n} at time \eqn{t} is
-  given as \eqn{n(t-1) + N(r, s)} where \eqn{N()} is a random normal
+  given as \eqn{n_{t-1} + N(r, s)} where \eqn{N()} is a random normal
   variate with expectation \eqn{r} and standard deviation \eqn{s}.
   Simulated responses \eqn{> K} are made to \eqn{K} and responses \eqn{<
   0.5} are made to \eqn{0} (extinct).
