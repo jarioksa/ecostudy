@@ -65,7 +65,7 @@ tilmandiagr(x, R, N, S, col = c(4,2,1), add = FALSE, xlim, ylim,
   \deqn{\frac{dR_i}{dt}=a_i(S_i-R_i) - \sum_j \left(c_{ij} \left(\frac{dN_j}{dt} + N_j m_j \right) \right)\;,}{dR[i]/dt = a[i]*(S[i]-R[i]) - SUM(j)(c[ij] * (dN[j]/dt + N[j]*m[j])),}
 
   where \eqn{R} and \eqn{S} are current resource level and its supply
-  point, eqn{a} is the resource mobilization rate from \eqn{S} to
+  point, \eqn{a} is the resource mobilization rate from \eqn{S} to
   \eqn{R}, \eqn{N} is the current population size, \eqn{m} its per
   capita mortality rate, and \eqn{c} the resource consumption
   rate. The corresponding change in the population size (that also
@@ -76,7 +76,7 @@ tilmandiagr(x, R, N, S, col = c(4,2,1), add = FALSE, xlim, ylim,
   where \eqn{r} is the per capita growth rate of \eqn{N} and \eqn{k}
   is the half-saturation parameter of the Monod equation that
   describes the relationship between resource use and population size,
-  and \eqn{min} selects the resource that gives the smallest response
+  and \eqn{\min} selects the resource that gives the smallest response
   for the species.
 
   The population growth stops when the resource level for the critical
@@ -97,7 +97,7 @@ tilmandiagr(x, R, N, S, col = c(4,2,1), add = FALSE, xlim, ylim,
   trajectories against time. The critical resource levels
   (\eqn{R^*}{R*}) are also displayed if there is only one resource or
   one species. Function \code{tilmandiagr} makes the traditional
-  Tilman graphics of resource trajectories in a two-resource plan
+  Tilman graphics of resource trajectories in a two-resource plane
   together with \eqn{R^*}{R*} lines for each species.  The diagram
   will be only drawn for two-resource models, but the number of
   species is not limited. Function \code{traj} is used to calculate

@@ -31,7 +31,7 @@ lotkacomp(alpha, beta, K1, K2)
     A \code{lotkacomp} result object.
 }
   \item{arrows}{
-    Number of arrays drawn to show the area where species increases. 
+    Number of arrows drawn to show the area where species increases. 
   }
   \item{N1, N2}{Initial population sizes.}
   \item{r1, r2}{Population growth rates.}

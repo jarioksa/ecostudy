@@ -34,12 +34,12 @@ ranlogist(N0, b, d, K, bcontr=0.5)
   at carrying capacity \eqn{K} they are equal (\eqn{r = b}). The sum
   of death and birth rates at given population size gives the current
   event rate which is used to simulate the time to the next event from
-  exponential distribution.  The next event is either birth that
-  increases population size by one or a death that reduces population
-  size by one individual. Consequently, the population size is
-  discrete but time is continuous, unlike in many other stochastic
-  models which treat time as discrete, but population size as
-  continuous.  Further, Pielou's model has real temporal
+  exponential distribution.  The next event is either (1) a birth that
+  increases population size by one or (2) a death that reduces
+  population size by one individual. Consequently, the population size
+  is discrete (integer) but time is continuous, unlike in many other
+  stochastic models which treat time as discrete, but population size
+  as continuous.  Further, Pielou's model has real temporal
   autocorrelation of population size, unlike many other models which
   vary expected population growth with no autocorrelation.
 
