@@ -1,6 +1,6 @@
 Package: ecostudy
-Version: 1.0-1
-Date: 2014-09-03
+Version: 1.2-1
+Date: 2018-05-11
 Title: Ecology Teaching Package
 Author: Jari Oksanen <jari.oksanen@oulu.fi>
 Maintainer: Jari Oksanen <jari.oksanen@oulu.fi>
@@ -9,5 +9,5 @@ Description: Functions to aid understanding ecological models for
   with sidetracks to other basic textbook models.
 Depends: primer
 Imports: deSolve
-License: GPL-2
+License: MIT + file LICENCE
 URL: http://cc.oulu.fi/~jarioksa/
