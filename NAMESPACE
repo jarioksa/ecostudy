@@ -4,7 +4,10 @@ export(lotkacomp, lotkapreyK, lotkaprey, poplogist, ranlogist,
 ranmilne, ricker, rmprey, tilman, tilmandiagr, traj)
 
 ## S3method
-import(stats, graphics, grDevices)
+importFrom(grDevices, .axisPars, axisTicks)
+importFrom(graphics, abline, axis, box, curve, lines, matlines,
+           matplot, mtext, par, points, segments)
+importFrom(stats, ppoints, rexp, rnorm, runif, update)
 importFrom(primer, lvcomp2, predpreyLV, predpreyRM)
 importFrom(deSolve, ode)
 
